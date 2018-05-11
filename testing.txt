@@ -1,7 +1,0 @@
-original content
-<<<<<<< HEAD
-michael
-=======
-
-alex added this
->>>>>>> 716fd1f920eaf305bd822f09f1f292c5f5c045ed
