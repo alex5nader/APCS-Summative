@@ -6,9 +6,9 @@ using UnityEngine;
 public class SpawnableObjects : ScriptableObject {
 
 	[SerializeField]
-	private Transform[] _objects;
-	
-	public Transform this[int index] {
+	private SpawnableObject[] _objects;
+
+	public SpawnableObject this[int index] {
 		get { return _objects[index]; }
 	}
 }
