@@ -17,6 +17,6 @@ public class Background : MonoBehaviour {
     void Update()
     {
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, step);
     }
 }
