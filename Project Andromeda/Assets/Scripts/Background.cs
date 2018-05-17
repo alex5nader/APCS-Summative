@@ -7,6 +7,7 @@ public class Background : MonoBehaviour {
     public float speed;
 
     public Transform target;
+    private SpawnObjects spawnObjects;
 
 	// Use this for initialization
 	void Start () {
@@ -18,5 +19,10 @@ public class Background : MonoBehaviour {
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+
+        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        {
+            spawnObjects.Spawn();
+        }
     }
 }
