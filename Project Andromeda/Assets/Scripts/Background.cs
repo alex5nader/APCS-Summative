@@ -7,11 +7,11 @@ public class Background : MonoBehaviour {
     public float speed;
 
     public Transform target;
-    private SpawnObjects spawnObjects;
+    public SpawnObjects spawnObjects;
 
 	// Use this for initialization
 	void Start () {
-		
+        spawnObjects = new SpawnObjects();
 	}
 
     // Update is called once per frame
