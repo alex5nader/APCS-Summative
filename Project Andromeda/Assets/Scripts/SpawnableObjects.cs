@@ -11,4 +11,8 @@ public class SpawnableObjects : ScriptableObject {
 	public SpawnableObject this[int index] {
 		get { return _objects[index]; }
 	}
+
+	public SpawnableObject Random() {
+		return _objects[UnityEngine.Random.Range(0, _objects.Length - 1)];
+	}
 }
