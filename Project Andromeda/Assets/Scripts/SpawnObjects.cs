@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObjects {
+public class SpawnObjects : MonoBehaviour {
+
+	public SpawnableObjects SpawnableObjectList;
+	public Transform ObjectParent;
 
 	public void Spawn() {
-		// spawn
+		
+		var newObject = Instantiate(SpawnableObjectList.Random().Object, ObjectParent);
 	}
 }
