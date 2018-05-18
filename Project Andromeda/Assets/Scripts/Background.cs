@@ -20,8 +20,9 @@ public class Background : MonoBehaviour {
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
 
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
+            transform.position = new Vector2(-26.6f, 0);
             spawnObjects.Spawn();
         }
     }
