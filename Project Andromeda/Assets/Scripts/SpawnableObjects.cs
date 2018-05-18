@@ -13,6 +13,6 @@ public class SpawnableObjects : ScriptableObject {
 	}
 
 	public SpawnableObject Random() {
-		return _objects[UnityEngine.Random.Range(0, _objects.Length - 1)];
+		return _objects[UnityEngine.Random.Range(0, _objects.Length)];
 	}
 }

@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Background : MonoBehaviour {
 
     public float speed;
 
     public Transform target;
-    public SpawnObjects spawnObjects;
+    private SpawnObjects spawnObjects;
 
 	// Use this for initialization
 	void Start () {
-        spawnObjects = new SpawnObjects();
+        spawnObjects = Camera.main.GetComponent<SpawnObjects>();
+        if (spawnObjects == null)
+            throw new NullReferenceException("Main camera must contain a SpawnObjects script.");
 	}
 
     // Update is called once per frame
