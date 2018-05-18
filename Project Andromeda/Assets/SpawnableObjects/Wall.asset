@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b63219edd6e9042b2f45ef2c133138, type: 3}
   m_Name: Wall
   m_EditorClassIdentifier: 
-  Object: {fileID: 0}
+  Object: {fileID: 4314154070748132, guid: 50f469c347ab27b42b175ae84892c83f, type: 2}

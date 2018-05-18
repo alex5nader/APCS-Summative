@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: SpawnableObjectList
   m_EditorClassIdentifier: 
   _objects:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cdc2c242332edb841bfb4b4f9ed51425, type: 2}
+  - {fileID: 11400000, guid: 0d0258bfffb288d4b8daf7897f4ced66, type: 2}

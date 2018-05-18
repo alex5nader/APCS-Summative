@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b63219edd6e9042b2f45ef2c133138, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  Object: {fileID: 0}
+  Object: {fileID: 4027462333287448, guid: 7c959b1e33f605149848896170180c06, type: 2}
