@@ -9,6 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b63219edd6e9042b2f45ef2c133138, type: 3}
-  m_Name: Wall
+  m_Name: _RR
   m_EditorClassIdentifier: 
-  Object: {fileID: 4314154070748132, guid: 50f469c347ab27b42b175ae84892c83f, type: 2}
+  Top: {fileID: 0}
+  Middle: {fileID: 4027462333287448, guid: 7c959b1e33f605149848896170180c06, type: 2}
+  Bottom: {fileID: 4027462333287448, guid: 7c959b1e33f605149848896170180c06, type: 2}

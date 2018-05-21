@@ -5,10 +5,34 @@ using UnityEngine;
 public class SpawnObjects : MonoBehaviour {
 
 	public SpawnableObjects SpawnableObjectList;
-	public Transform ObjectParent;
+	[SerializeField]
+	private Transform ObjectParent;
+	[SerializeField]
+	private float XPosition;
 
 	public void Spawn() {
-		
-		var newObject = Instantiate(SpawnableObjectList.Random().Object, ObjectParent);
+		var spawnableObject = SpawnableObjectList.Random();
+
+		foreach (var pair in spawnableObject.GetSpawnable()) {
+			int y;
+			switch (pair.Value) {
+			case ObjectPosition.Top:
+				y = 10;
+				break;
+			case ObjectPosition.Bottom:
+				y = -10;
+				break;
+			case ObjectPosition.Middle:
+			default:
+				y = 0;
+				break;
+			}
+			Instantiate(
+				pair.Key,
+				new Vector3(XPosition, y),
+				Quaternion.identity,
+				ObjectParent
+			);
+		}
 	}
 }
