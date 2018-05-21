@@ -5,9 +5,11 @@ using UnityEngine;
 public class PearMan : MonoBehaviour
 {
     private int position;
+    private Collider2D collider;
 
     void Start()
     {
+        collider = GetComponent<Collider2D>();
         position = 1;
 	}
 	
@@ -39,5 +41,10 @@ public class PearMan : MonoBehaviour
                 transform.position = new Vector2(transform.position.x, transform.position.y + 10);
             }
         }
+    }
+
+    public Collider2D getPlayerCollider()
+    {
+        return collider;
     }
 }

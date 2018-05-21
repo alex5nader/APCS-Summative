@@ -18,4 +18,9 @@ public class Scored : MonoBehaviour {
         count++;
         score.text = "Score: " + (count/10);
     }
+
+    public void addPoints(int points)
+    {
+        count += points;
+    }
 }
