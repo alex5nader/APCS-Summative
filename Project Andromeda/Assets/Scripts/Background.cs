@@ -5,7 +5,7 @@ using System;
 
 public class Background : MonoBehaviour {
 
-    public float speed;
+    public static float Speed = 20;
 
     public Transform target;
     private SpawnObjects spawnObjects;
@@ -20,12 +20,13 @@ public class Background : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        float step = speed * Time.deltaTime;
+        float step = Speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+        Debug.Log(transform.position);
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
-            transform.position = new Vector2(-26.6f, 0);
+            transform.position = Vector2.zero;
             spawnObjects.Spawn();
         }
     }
