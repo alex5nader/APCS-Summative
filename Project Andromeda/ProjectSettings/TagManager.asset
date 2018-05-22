@@ -7,6 +7,7 @@ TagManager:
   - PlayerSprite
   - Object
   - Power Up
+  - ScoreUI
   layers:
   - Default
   - TransparentFX
