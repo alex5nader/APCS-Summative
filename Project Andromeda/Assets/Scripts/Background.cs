@@ -22,7 +22,6 @@ public class Background : MonoBehaviour {
     {
         float step = Speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-        Debug.Log(transform.position);
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
