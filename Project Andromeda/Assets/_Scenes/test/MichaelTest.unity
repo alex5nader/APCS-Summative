@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 113895601}
   - component: {fileID: 113895600}
   - component: {fileID: 113895604}
+  - component: {fileID: 113895605}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 1677325641}
+--- !u!114 &113895605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113895599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fcca9ccbde2ce46afcebde3d69be5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnableObjectList: {fileID: 0}
+  ObjectParent: {fileID: 0}
+  XPosition: 0
 --- !u!1 &280842466
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +230,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 280842467}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485563385}
   - component: {fileID: 485563386}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,8 +433,9 @@ GameObject:
   m_Component:
   - component: {fileID: 537880569}
   - component: {fileID: 537880570}
+  - component: {fileID: 537880571}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Reverse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,6 +499,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &537880571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537880568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba07a98ed95a141aaf36a2046fe23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pearMan: {fileID: 0}
+  scored: {fileID: 0}
 --- !u!1 &736073548
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +568,7 @@ GameObject:
   - component: {fileID: 960832126}
   - component: {fileID: 960832128}
   - component: {fileID: 960832129}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pear Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +594,7 @@ Transform:
   m_GameObject: {fileID: 960832125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1553454806}
   - {fileID: 485563385}
@@ -598,7 +627,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.058106422, y: -0.0072627068}
+  m_Offset: {x: -0.09879398, y: -0.00726223}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -609,7 +638,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9006596, y: 2.9901667}
+  m_Size: {x: 3.7180195, y: 5.9738903}
   m_EdgeRadius: 0
 --- !u!1 &1224524648
 GameObject:
@@ -819,7 +848,7 @@ GameObject:
   - component: {fileID: 1553454806}
   - component: {fileID: 1553454808}
   - component: {fileID: 1553454807}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
