@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds) as GameObject;
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 10;
+            bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
         }
     }
 }
