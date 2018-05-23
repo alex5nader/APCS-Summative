@@ -7,8 +7,7 @@ public class SpawnObjects : MonoBehaviour {
 	public SpawnableObjects SpawnableObjectList;
 	[SerializeField]
 	private Transform ObjectParent;
-	[SerializeField]
-	private float XPosition;
+	public float XPosition;
 
 	public void Spawn() {
 		var spawnableObject = SpawnableObjectList.Random();
