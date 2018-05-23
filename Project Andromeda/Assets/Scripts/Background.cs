@@ -5,8 +5,6 @@ using System;
 
 public class Background : MonoBehaviour {
 
-    public static float Speed = 20;
-
     public Transform target;
     private SpawnObjects spawnObjects;
 
@@ -15,12 +13,14 @@ public class Background : MonoBehaviour {
         spawnObjects = Camera.main.GetComponent<SpawnObjects>();
         if (spawnObjects == null)
             throw new NullReferenceException("Main camera must contain a SpawnObjects script.");
+
+        
 	}
 
     // Update is called once per frame
     void Update()
     {
-        float step = Speed * Time.deltaTime;
+        float step = Toolbox.Instance.ScrollSpeed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target.position, step);
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)

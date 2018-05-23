@@ -14,7 +14,7 @@ public class ObjectMove : MonoBehaviour {
         if (objectSpawner == null)
             return;
 
-        transform.Translate(-Background.Speed * Time.deltaTime, 0, 0);
+        transform.Translate(-Toolbox.Instance.ScrollSpeed * Time.deltaTime, 0, 0);
 
         if (transform.position.x <= -objectSpawner.XPosition)
             Destroy(gameObject);
