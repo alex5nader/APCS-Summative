@@ -28,7 +28,7 @@ public class SpawnObjects : MonoBehaviour {
 			}
 			Instantiate(
 				pair.Key,
-				new Vector3(XPosition, y),
+				new Vector2(XPosition, y),
 				Quaternion.identity,
 				ObjectParent
 			);
