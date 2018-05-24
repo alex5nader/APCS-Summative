@@ -12,7 +12,7 @@ public class AppleShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds) as GameObject;
             bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
