@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4483652403999042}
   - component: {fileID: 212418534879038886}
   - component: {fileID: 50662504416248692}
-  - component: {fileID: 114259280666199488}
+  - component: {fileID: 114977869958449592}
   m_Layer: 0
   m_Name: SeedA
   m_TagString: Untagged
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114259280666199488
+--- !u!114 &114977869958449592
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1643976856884866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706ceb79c7c9dd545be7eb154783602e, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a737b7049ec684b8470bff7ea71449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212418534879038886
