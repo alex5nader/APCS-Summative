@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Scored : MonoBehaviour {
-    public TextMeshPro ScoreObject;
+    public TextMeshProUGUI ScoreObject;
     private float count;
 
     // Update is called once per frame
