@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/TitleScreen.unity
     guid: f86599d8576eff042b192e6be632633b
   - enabled: 1
-    path: Assets/_Scenes/test/AlexTest.unity
-    guid: 981f60a2a455f6c43adc8c02efe5e1de
+    path: Assets/_Scenes/SingleplayerGame.unity
+    guid: dc782286eb9768240a03062787baf5b6
+  - enabled: 1
+    path: Assets/_Scenes/MultiplayerGame.unity
+    guid: b46d714233fe8e14097f0d6980b539ee
   m_configObjects: {}

@@ -6,10 +6,6 @@ using UnityEngine;
 public class AreDead : MonoBehaviour {
 
     private static int player;
-	// Use this for initialization
-	void Start () {
-        player = 2;
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,5 +18,9 @@ public class AreDead : MonoBehaviour {
     public static void die()
     {
         player--;
+    }
+
+    public static void Reset(int player) {
+        AreDead.player = player;
     }
 }
