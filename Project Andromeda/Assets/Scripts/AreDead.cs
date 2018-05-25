@@ -7,6 +7,10 @@ public class AreDead : MonoBehaviour {
 
     private static int player;
 	
+    private void Start() {
+        player = GameObject.FindGameObjectsWithTag("Player").Length;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(player == 0)
@@ -18,9 +22,5 @@ public class AreDead : MonoBehaviour {
     public static void die()
     {
         player--;
-    }
-
-    public static void Reset(int player) {
-        AreDead.player = player;
     }
 }

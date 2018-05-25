@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
     
+    private const int SingleplayerScene = 1;
+    private const int MultiplayerScene = 2;
+
     public Button PlayButtonSP;
     public Button PlayButtonMP;
     public Button QuitButton;
@@ -15,14 +18,12 @@ public class TitleScreen : MonoBehaviour {
     }
 
     private void PlayGameSingleplayer() {
-        AreDead.Reset(1);
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SingleplayerScene);
     }
 
     private void PlayGameMultiplayer() {
-        AreDead.Reset(2);
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(MultiplayerScene);
     }
 }
