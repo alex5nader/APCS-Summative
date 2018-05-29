@@ -7,7 +7,7 @@ public class destroy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         i++;
-        if (i > 3)
+        if (i > 2)
         {
             i--;
             Destroy(gameObject);
