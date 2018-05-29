@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class SeedKill : MonoBehaviour {
 
-	private MonoBehaviour scoreTracker;
+	public MonoBehaviour scoreTracker;
 
-	[SerializeField]
-	private bool isPear = true;
+	public bool isPear;
 
 	public float pointAdd;
 
 	private void Start() {
-		if (isPear) {
-			scoreTracker = Camera.main.GetComponent<ScoredPear>();
-		} else {
-			scoreTracker = Camera.main.GetComponent<Scored>();
-		}
 		if (scoreTracker == null)
 			Debug.LogError("Score tracker must be defined");
 	}

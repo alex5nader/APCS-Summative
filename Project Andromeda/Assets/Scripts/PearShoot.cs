@@ -17,8 +17,11 @@ public class PearShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds) as GameObject;
+            var bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds);
             bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
+            var killScript = bullet.GetComponent<SeedKill>();
+            killScript.isPear = true;
+            killScript.scoreTracker = GetComponent<ScoredPear>();
         }
     }
 }

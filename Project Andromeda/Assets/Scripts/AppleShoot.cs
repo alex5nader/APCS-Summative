@@ -16,6 +16,9 @@ public class AppleShoot : MonoBehaviour {
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds) as GameObject;
             bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
+            var killScript = bullet.GetComponent<SeedKill>();
+            killScript.isPear = false;
+            killScript.scoreTracker = GetComponent<Scored>();
         }
     }
 }
