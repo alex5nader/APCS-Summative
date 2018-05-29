@@ -12,8 +12,8 @@ public class Scored : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        addPoints(1f);
-        ScoreObject.SetText(Mathf.FloorToInt(count / 10).ToString() + 0); // make player feel better by "multiplying" the score by 10
+        addPoints(0.1f);
+        ScoreObject.SetText(Mathf.FloorToInt(count).ToString());
     }
 
     public void addPoints(float points)
