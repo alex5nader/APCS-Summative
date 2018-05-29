@@ -15,7 +15,7 @@ public class AreDead : MonoBehaviour {
 	void Update () {
 		if(player == 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
 	}
 
