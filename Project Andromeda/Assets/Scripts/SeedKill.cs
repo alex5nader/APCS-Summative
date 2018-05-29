@@ -18,14 +18,16 @@ public class SeedKill : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag("Player"))
 			return;
-		if (other.gameObject.tag.Contains("Destroyable")) {
-			if (scoreTracker != null) {
-				if (isPear)
-					((ScoredPear) scoreTracker).addPoints(pointAdd);
-				else
-					((Scored) scoreTracker).addPoints(pointAdd);
+		if (other.gameObject.tag.Contains("Object")) {
+			if (other.gameObject.tag.Contains("Destroyable")) {
+				if (scoreTracker != null) {
+					if (isPear)
+						((ScoredPear) scoreTracker).addPoints(pointAdd);
+					else
+						((Scored) scoreTracker).addPoints(pointAdd);
+				}
+				Destroy(other.gameObject);
 			}
-			Destroy(other.gameObject);
 			Destroy(gameObject);
 		}
 	}
