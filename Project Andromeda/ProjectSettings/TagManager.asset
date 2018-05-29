@@ -8,6 +8,7 @@ TagManager:
   - Object
   - Power Up
   - ScoreUI
+  - Destroyable Object
   layers:
   - Default
   - TransparentFX

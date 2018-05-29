@@ -13,7 +13,7 @@ public class Scored : MonoBehaviour {
     void Update()
     {
         addPoints(1f);
-        ScoreObject.SetText(Mathf.FloorToInt(count / 10).ToString() + 0); // make player feel better by "multiplying" the score by 10
+        ScoreObject.SetText(Mathf.FloorToInt((int) count / 10 * 10).ToString()); // make player feel better by multiplying the score by 10
     }
 
     public void addPoints(float points)
