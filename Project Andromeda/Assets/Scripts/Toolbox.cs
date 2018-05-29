@@ -8,7 +8,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float ScrollDelta { get; set; }
 
     private void Awake() {
-        DefaultScrollSpeed = 20f;
+        DefaultScrollSpeed = 30f;
         MaxScrollSpeed = 80f;
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
