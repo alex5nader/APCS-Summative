@@ -18,7 +18,7 @@ public class Reverse : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("collision");
         pearMan.reverse();

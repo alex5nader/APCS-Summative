@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour {
+public class AppleShoot : MonoBehaviour {
     public GameObject projectile;
     public Transform seeds;
     // Use this for initialization
@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds) as GameObject;
             bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
