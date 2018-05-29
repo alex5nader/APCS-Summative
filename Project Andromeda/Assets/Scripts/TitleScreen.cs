@@ -14,7 +14,7 @@ public class TitleScreen : MonoBehaviour {
     private void Awake() {
         PlayButtonSP.onClick.AddListener(PlayGameSingleplayer);
         PlayButtonMP.onClick.AddListener(PlayGameMultiplayer);
-        QuitButton.onClick.AddListener(Application.Quit);
+        QuitButton.onClick.AddListener(Quit);
     }
 
     private void PlayGameSingleplayer() {
@@ -26,5 +26,14 @@ public class TitleScreen : MonoBehaviour {
     {
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
         SceneManager.LoadScene(MultiplayerScene);
+    }
+
+    private void Quit() {
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+            Application.Quit();
     }
 }
