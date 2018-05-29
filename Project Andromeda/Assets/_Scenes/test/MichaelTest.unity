@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308788bca933cd24b931a1d1e5892107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
+  Canvas: {fileID: 1224524652}
 --- !u!114 &113895605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fcca9ccbde2ce46afcebde3d69be5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnableObjectList: {fileID: 0}
+  SpawnableObjectList: {fileID: 11400000, guid: 94703223e7897eb498d6d4da74b2c45b,
+    type: 2}
   ObjectParent: {fileID: 0}
   XPosition: 0
 --- !u!1 &280842466
@@ -408,6 +409,8 @@ GameObject:
   - component: {fileID: 537880569}
   - component: {fileID: 537880570}
   - component: {fileID: 537880571}
+  - component: {fileID: 537880573}
+  - component: {fileID: 537880572}
   m_Layer: 0
   m_Name: Reverse
   m_TagString: Untagged
@@ -484,8 +487,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ba07a98ed95a141aaf36a2046fe23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pearMan: {fileID: 0}
-  scored: {fileID: 0}
+  pearMan: {fileID: 960832126}
+  scored: {fileID: 113895604}
+--- !u!70 &537880572
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537880568}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 5.12, y: 5.12}
+  m_Direction: 0
+--- !u!50 &537880573
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 537880568}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &736073548
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +580,7 @@ GameObject:
   - component: {fileID: 960832126}
   - component: {fileID: 960832128}
   - component: {fileID: 960832129}
+  - component: {fileID: 960832130}
   m_Layer: 0
   m_Name: Pear Man
   m_TagString: Untagged
@@ -614,6 +653,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7180195, y: 5.9738903}
   m_EdgeRadius: 0
+--- !u!50 &960832130
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 960832125}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1224524648
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +778,7 @@ GameObject:
   - component: {fileID: 1409559316}
   - component: {fileID: 1409559315}
   - component: {fileID: 1409559314}
+  - component: {fileID: 1409559318}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -749,7 +809,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -812,6 +872,26 @@ Transform:
   m_Father: {fileID: 736073550}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1409559318
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409559313}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1553454805
 GameObject:
   m_ObjectHideFlags: 0
