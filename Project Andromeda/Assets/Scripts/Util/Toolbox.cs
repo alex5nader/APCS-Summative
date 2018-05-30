@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Toolbox : Singleton<Toolbox> {
 
     protected Toolbox() { }
@@ -6,6 +8,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float MaxScrollSpeed { get; set; }
     public float DefaultScrollSpeed { get; private set; }
     public float ScrollDelta { get; set; }
+    public AnimationCurve Curve { get; set; }
 
     private void Awake() {
         DefaultScrollSpeed = 30f;
