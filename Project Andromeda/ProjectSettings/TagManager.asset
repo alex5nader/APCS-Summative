@@ -9,6 +9,7 @@ TagManager:
   - Power Up
   - ScoreUI
   - Destroyable Object
+  - Coin
   layers:
   - Default
   - TransparentFX
