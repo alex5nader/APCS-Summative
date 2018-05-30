@@ -742,8 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableObjectList: {fileID: 11400000, guid: 94703223e7897eb498d6d4da74b2c45b,
     type: 2}
-  PowerUpList:
-  - {fileID: 1239471916417444, guid: 7c959b1e33f605149848896170180c06, type: 2}
+  PowerUpList: {fileID: 11400000, guid: b326ebcdb08193249bcb9d9faff49673, type: 2}
   ObjectParent: {fileID: 2050789626}
   XPosition: 36
 --- !u!81 &428220003

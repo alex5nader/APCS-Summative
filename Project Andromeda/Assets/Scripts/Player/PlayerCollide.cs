@@ -19,7 +19,6 @@ public class PlayerCollide : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Contains("Object"))
         {
-            Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
             AreDead.die();
             Destroy(gameObject);
         }
@@ -47,6 +46,6 @@ public class PlayerCollide : MonoBehaviour {
         yield return new WaitForSeconds(15f);
         Toolbox.Instance.MaxScrollSpeed /= mult;
         Toolbox.Instance.ScrollSpeed /= mult;
-        Toolbox.Instance.PointsDelta *= mult;
+        Toolbox.Instance.PointsDelta /= mult;
     }
 }
