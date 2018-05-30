@@ -8,6 +8,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float MaxScrollSpeed { get; set; }
     public float DefaultScrollSpeed { get; private set; }
     public float ScrollDelta { get; set; }
+    public float PointsDelta { get; set; }
     public AnimationCurve Curve { get; set; }
 
     private void Awake() {
@@ -17,6 +18,8 @@ public class Toolbox : Singleton<Toolbox> {
         // delta per frame = change in speed / (number of frames in 5 seconds)
         ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 5f);
         ScrollSpeed = DefaultScrollSpeed;
+
+        PointsDelta = 1f;
     }
 
     private void Update() {
