@@ -15,7 +15,7 @@ public class PlayerCollide : MonoBehaviour {
             score = GetComponent<Scored>();
     }
 
-    public void OnCollisionEnter2D(Collision2D other) {
+    public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Contains("Object"))
         {
             Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;

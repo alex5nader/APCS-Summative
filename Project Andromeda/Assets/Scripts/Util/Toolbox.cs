@@ -11,7 +11,7 @@ public class Toolbox : Singleton<Toolbox> {
     public AnimationCurve Curve { get; set; }
 
     private void Awake() {
-        DefaultScrollSpeed = 30f;
+        DefaultScrollSpeed = 300f;
         MaxScrollSpeed = 80f;
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
