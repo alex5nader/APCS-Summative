@@ -21,6 +21,7 @@ public class PlayerCollide : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Contains("Object") && !JetPack)
         {
+<<<<<<< HEAD
             if (Shield)
             {
                 Destroy(other.gameObject);
@@ -32,6 +33,10 @@ public class PlayerCollide : MonoBehaviour {
                 AreDead.die();
                 Destroy(gameObject);
             }
+=======
+            AreDead.die();
+            Destroy(gameObject);
+>>>>>>> 13088d152e3ed260893af5345554e457e81d0bd3
         }
         else if (other.gameObject.CompareTag("Coin") && !JetPack)
         {
@@ -78,7 +83,7 @@ public class PlayerCollide : MonoBehaviour {
         yield return new WaitForSeconds(time);
         Toolbox.Instance.MaxScrollSpeed /= mult;
         Toolbox.Instance.ScrollSpeed /= mult;
-        Toolbox.Instance.PointsDelta *= mult;
+        Toolbox.Instance.PointsDelta /= mult;
     }
     private IEnumerator Invunerability(float time)
     {
