@@ -19,12 +19,14 @@ public class TitleScreen : MonoBehaviour {
 
     private void PlayGameSingleplayer() {
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+        Toolbox.Instance.PlayMode = 1;
         SceneManager.LoadScene(SingleplayerScene);
     }
 
     private void PlayGameMultiplayer()
     {
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+        Toolbox.Instance.PlayMode = 2;
         SceneManager.LoadScene(MultiplayerScene);
     }
 

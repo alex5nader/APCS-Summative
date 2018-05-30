@@ -11,6 +11,8 @@ public class Toolbox : Singleton<Toolbox> {
     public float PointsDelta { get; set; }
     public AnimationCurve Curve { get; set; }
 
+    public int PlayMode { get; set; }
+
     private void Awake() {
         DefaultScrollSpeed = 30f;
         MaxScrollSpeed = 80f;
@@ -20,6 +22,7 @@ public class Toolbox : Singleton<Toolbox> {
         ScrollSpeed = DefaultScrollSpeed;
 
         PointsDelta = 1f;
+        PlayMode = -1;
     }
 
     private void Update() {

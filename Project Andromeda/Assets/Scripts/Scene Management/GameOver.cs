@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
     public Button TitleButton;
+    public Button ReplayButton;
     public Button QuitButton;
 
     private void Start()
     {
         TitleButton.onClick.AddListener(GoToTitle);
+        ReplayButton.onClick.AddListener(Replay);
         QuitButton.onClick.AddListener(Quit);
     }
 
@@ -16,6 +18,11 @@ public class GameOver : MonoBehaviour {
     {
         Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
         SceneManager.LoadScene(0);
+    }
+
+    private void Replay() {
+        Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+        SceneManager.LoadScene(Toolbox.Instance.PlayMode);
     }
 
     private void Quit()
