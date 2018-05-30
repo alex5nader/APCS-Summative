@@ -6,22 +6,28 @@ public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
     private Scored score;
+    private ScoredPear score2;
     public void Start()
     {
-        score = GetComponent<Scored>();
+        if(isPear)
+            score2 = GetComponent<ScoredPear>();
+        else
+            score = GetComponent<Scored>();
     }
 
     public void OnCollisionEnter2D(Collision2D other) {
-
-        Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
         if (other.gameObject.tag.Contains("Object"))
         {
+            Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
             AreDead.die();
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Coin"))
         {
-            score.addPoints(1000);
+            if(!isPear)
+                score.addPoints(1000);
+            else
+                score2.addPoints(1000);
             Destroy(other.gameObject);
         }
     }
