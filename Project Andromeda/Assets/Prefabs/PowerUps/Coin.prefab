@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61484900209870904}
   - component: {fileID: 114541065436352018}
   m_Layer: 0
-  m_Name: PowerUp1
+  m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

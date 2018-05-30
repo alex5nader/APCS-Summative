@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnableObjectList: {fileID: 11400000, guid: 94703223e7897eb498d6d4da74b2c45b,
     type: 2}
-  PowerUpList: []
+  PowerUpList: {fileID: 0}
   ObjectParent: {fileID: 2011407638}
   XPosition: 36
 --- !u!81 &80427468
@@ -610,6 +610,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1287530149
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758398272652356, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1456956713
 GameObject:
   m_ObjectHideFlags: 0

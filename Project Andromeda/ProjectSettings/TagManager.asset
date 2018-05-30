@@ -10,6 +10,7 @@ TagManager:
   - ScoreUI
   - Destroyable Object
   - Coin
+  - Speed2
   layers:
   - Default
   - TransparentFX
