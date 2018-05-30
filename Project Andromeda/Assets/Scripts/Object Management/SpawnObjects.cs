@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnObjects : MonoBehaviour {
 
 	public SpawnableObjects SpawnableObjectList;
-	public GameObject[] PowerUpList;
+	public PowerUpList PowerUpList;
 	[SerializeField]
 	private Transform ObjectParent;
 	public float XPosition;
@@ -31,7 +31,7 @@ public class SpawnObjects : MonoBehaviour {
 			// 1 in 180 chance to spawn a power up in place of an obstacle
 			if (Random.Range(0, 180)  < 1) {
 				Instantiate(
-					PowerUpList[Random.Range(0, PowerUpList.Length)],
+					PowerUpList.Random(),
 					new Vector2(XPosition, y),
 					Quaternion.identity,
 					ObjectParent
