@@ -11,6 +11,9 @@ TagManager:
   - Destroyable Object
   - Coin
   - Speed2
+  - Speed3
+  - SlowDown
+  - JetPack
   layers:
   - Default
   - TransparentFX
