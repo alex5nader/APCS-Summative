@@ -22,6 +22,22 @@ public class SpawnableObjectsEditor {
 
         Selection.activeObject = asset;
     }
+    [MenuItem("Assets/Create/Power Up List")]
+    public static void CreatePowerUplist() {
+        var asset = ScriptableObject.CreateInstance<PowerUpList>();
+
+        var path = EditorUtility.SaveFilePanel("Create Spawnable Object List", "Assets/", "SpawnableObjectList", "asset");
+
+        if (string.IsNullOrEmpty(path))
+            return;
+        
+        AssetDatabase.CreateAsset(asset, ToRelativePath(path));
+        AssetDatabase.SaveAssets();
+
+        EditorUtility.FocusProjectWindow();
+
+        Selection.activeObject = asset;
+    }
 
     [MenuItem("Assets/Create/Spawnable Object")]
     public static void CreateSpawnableObject() {
