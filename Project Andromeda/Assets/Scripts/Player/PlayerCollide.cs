@@ -7,7 +7,8 @@ public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
     private Scored score;
-    private bool isInvun;
+    private bool JetPack;
+    private bool Shield;
     private ScoredPear score2;
     public void Start()
     {
@@ -18,12 +19,26 @@ public class PlayerCollide : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Contains("Object") && !isInvun)
+        if (other.gameObject.tag.Contains("Object") && !JetPack)
         {
+<<<<<<< HEAD
+            if (Shield)
+            {
+                Destroy(other.gameObject);
+                Shield = false;
+            }
+            else
+            {
+                Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+                AreDead.die();
+                Destroy(gameObject);
+            }
+=======
             AreDead.die();
             Destroy(gameObject);
+>>>>>>> 13088d152e3ed260893af5345554e457e81d0bd3
         }
-        else if (other.gameObject.CompareTag("Coin"))
+        else if (other.gameObject.CompareTag("Coin") && !JetPack)
         {
             if(!isPear)
                 score.addPoints(1000);
@@ -31,25 +46,31 @@ public class PlayerCollide : MonoBehaviour {
                 score2.addPoints(1000);
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed2"))
+        else if (other.gameObject.CompareTag("Speed2") && !JetPack)
         {
             StartCoroutine(SpeedUp(2, 15));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed3"))
+        else if (other.gameObject.CompareTag("Speed3") && !JetPack)
         {
             StartCoroutine(SpeedUp(3,15));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("SlowDown"))
+        else if (other.gameObject.CompareTag("SlowDown") && !JetPack)
         {
             StartCoroutine(SpeedUp(.75f,10));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("JetPack"))
+        else if (other.gameObject.CompareTag("JetPack") && !JetPack)
         {
             StartCoroutine(SpeedUp(10f, 5));
             StartCoroutine(Invunerability(6));
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Shield") && !JetPack && !Shield)
+        {
+            Shield = true;
+            
             Destroy(other.gameObject);
         }
     }
@@ -66,8 +87,8 @@ public class PlayerCollide : MonoBehaviour {
     }
     private IEnumerator Invunerability(float time)
     {
-        isInvun = true;
+        JetPack = true;
         yield return new WaitForSeconds(time);
-        isInvun = false;
+        JetPack = false;
     }
 }
