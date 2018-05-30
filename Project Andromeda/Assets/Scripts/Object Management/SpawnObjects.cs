@@ -29,7 +29,7 @@ public class SpawnObjects : MonoBehaviour {
 			}
 
 			// 1 in 180 chance to spawn a power up in place of an obstacle
-			if (Random.Range(0, 180)  < 180) {
+			if (Random.Range(0, 180)  < 1) {
 				Instantiate(
 					PowerUpList[Random.Range(0, PowerUpList.Length)],
 					new Vector2(XPosition, y),
