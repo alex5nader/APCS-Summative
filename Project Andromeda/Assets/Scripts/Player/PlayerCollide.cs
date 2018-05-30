@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerCollide : MonoBehaviour {
 
@@ -29,6 +30,23 @@ public class PlayerCollide : MonoBehaviour {
             else
                 score2.addPoints(1000);
             Destroy(other.gameObject);
+        } else if (other.gameObject.CompareTag("Speed2"))
+        {
+            StartCoroutine(SpeedUp(2));
+            Destroy(other.gameObject);
         }
+
+
+    }
+
+    private IEnumerator SpeedUp(float mult)
+    {
+        Toolbox.Instance.MaxScrollSpeed *= mult;
+        Toolbox.Instance.ScrollSpeed *= mult;
+        Toolbox.Instance.PointsDelta *= mult;
+        yield return new WaitForSeconds(15f);
+        Toolbox.Instance.MaxScrollSpeed /= mult;
+        Toolbox.Instance.ScrollSpeed /= mult;
+        Toolbox.Instance.PointsDelta *= mult;
     }
 }
