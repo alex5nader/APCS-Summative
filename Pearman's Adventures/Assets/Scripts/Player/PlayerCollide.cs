@@ -6,70 +6,76 @@ using System.Collections;
 public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
-    public GameObject shield;
-    private Scored score;
-    private bool JetPack;
-    private bool Shield;
-    private ScoredPear score2;
+    public GameObject shieldObject;
+    private ScoredPear scoreTrackerPear;
+    private Scored scoreTrackerApple;
+    private bool hasJetPack;
+    private bool hasSheild;
+
     public void Start()
     {
         if(isPear)
-            score2 = GetComponent<ScoredPear>();
+            scoreTrackerPear = GetComponent<ScoredPear>();
         else
-            score = GetComponent<Scored>();
+            scoreTrackerApple = GetComponent<Scored>();
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Contains("Object") && !JetPack)
+        // don't collide with anything if the player has a jetpack
+        if (hasJetPack)
+            return;
+            
+        if (other.gameObject.tag.Contains("Object"))
         {
-            if (Shield)
+            if (hasSheild)
             {
-                shield.SetActive(false);
+                // player shouldnt die with shield
+                shieldObject.SetActive(false);
                 Destroy(other.gameObject);
-                Shield = false;
+                hasSheild = false;
             }
             else
             {
-                AreDead.die();
                 Destroy(gameObject);
             }
         }
-        else if (other.gameObject.CompareTag("Coin") && !JetPack)
+        else if (other.gameObject.CompareTag("Coin"))
         {
             if(!isPear)
-                score.addPoints(1000);
+                scoreTrackerApple.addPoints(1000);
             else
-                score2.addPoints(1000);
+                scoreTrackerPear.addPoints(1000);
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed2") && !JetPack)
+        else if (other.gameObject.CompareTag("Speed2"))
         {
             StartCoroutine(SpeedUp(2, 15));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed3") && !JetPack)
+        else if (other.gameObject.CompareTag("Speed3"))
         {
             StartCoroutine(SpeedUp(3,15));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("SlowDown") && !JetPack)
+        else if (other.gameObject.CompareTag("SlowDown"))
         {
             StartCoroutine(SpeedUp(.75f,10));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("JetPack") && !JetPack)
+        else if (other.gameObject.CompareTag("JetPack"))
         {
             StartCoroutine(SpeedUp(10f, 5));
             StartCoroutine(Invunerability(6));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Shield") && !JetPack && !Shield)
+        // player can only have one shield active
+        else if (other.gameObject.CompareTag("Shield") && !hasSheild)
         {
-            Shield = true;
-            shield.SetActive(true);
+            hasSheild = true;
+            shieldObject.SetActive(true);
             Destroy(other.gameObject);
         }
-        else if(other.gameObject.CompareTag("Magnet") && !JetPack)
+        else if(other.gameObject.CompareTag("Magnet"))
         {
             other.GetComponent<MoveTowardsPM>().target = transform;
             StartCoroutine(magnet(15));
@@ -89,9 +95,9 @@ public class PlayerCollide : MonoBehaviour {
     }
     private IEnumerator Invunerability(float time)
     {
-        JetPack = true;
+        hasJetPack = true;
         yield return new WaitForSeconds(time);
-        JetPack = false;
+        hasJetPack = false;
     }
     private IEnumerator magnet(float time)
     {
