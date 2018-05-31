@@ -16,7 +16,7 @@ public class PearShoot : MonoBehaviour
             var bullet = Instantiate(projectile, transform.position, Quaternion.identity, seeds);
             bullet.GetComponent<Rigidbody2D>().velocity = transform.right * 50;
             var killScript = bullet.GetComponent<SeedKill>();
-            killScript.isPear = true;
+            killScript.isPearSeed = true;
             killScript.scoreTracker = GetComponent<ScoredPear>();
         }
     }

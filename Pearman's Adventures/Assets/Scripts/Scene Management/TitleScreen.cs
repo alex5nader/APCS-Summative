@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
     
-    private const int SingleplayerScene = 1;
-    private const int MultiplayerScene = 2;
-
     public Button PlayButtonSP;
     public Button PlayButtonMP;
 
@@ -19,14 +16,14 @@ public class TitleScreen : MonoBehaviour {
 
     private void PlayGameSingleplayer() {
         Toolbox.Instance.Reset();
-        Toolbox.Instance.PlayMode = 1;
-        SceneManager.LoadScene(SingleplayerScene);
+        Toolbox.Instance.PlayMode = PlayState.Singleplayer;
+        SceneManager.LoadScene((int) PlayState.Singleplayer);
     }
 
     private void PlayGameMultiplayer()
     {
         Toolbox.Instance.Reset();
-        Toolbox.Instance.PlayMode = 2;
-        SceneManager.LoadScene(MultiplayerScene);
+        Toolbox.Instance.PlayMode = PlayState.Multiplayer;
+        SceneManager.LoadScene((int) PlayState.Multiplayer);
     }
 }

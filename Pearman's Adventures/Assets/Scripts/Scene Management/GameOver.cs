@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour {
 
     private void Start()
     {
+        // tell buttons to run those methods when they are clicked
         TitleButton.onClick.AddListener(GoToTitle);
         ReplayButton.onClick.AddListener(Replay);
     }
@@ -17,11 +18,11 @@ public class GameOver : MonoBehaviour {
     private void GoToTitle()
     {
         Toolbox.Instance.Reset();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene((int) PlayState.TitleScreen);
     }
 
     private void Replay() {
         Toolbox.Instance.Reset();
-        SceneManager.LoadScene(Toolbox.Instance.PlayMode);
+        SceneManager.LoadScene((int) Toolbox.Instance.PlayMode);
     }
 }
