@@ -1,3 +1,5 @@
+// #define EDITOR
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -31,11 +33,10 @@ public class TitleScreen : MonoBehaviour {
     }
 
     private void Quit() {
-        if (Application.isEditor)
-        {
+        #if EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
+        #else
             Application.Quit();
+        #endif
     }
 }
