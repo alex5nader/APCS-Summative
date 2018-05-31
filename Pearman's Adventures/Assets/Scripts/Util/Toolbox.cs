@@ -12,6 +12,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float ScrollSpeed { get; set; }
     public float MaxScrollSpeed { get; set; }
     public float DefaultScrollSpeed { get; private set; }
+    public float HardMaxScrollSpeed { get; set; }
     public float ScrollDelta { get; set; }
     
     public float PointsDelta { get; set; }
@@ -23,6 +24,7 @@ public class Toolbox : Singleton<Toolbox> {
     private void Awake() {
         DefaultScrollSpeed = 30f;
         MaxScrollSpeed = 80f;
+        HardMaxScrollSpeed = MaxScrollSpeed * 4;
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
         ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 5f);
@@ -40,6 +42,8 @@ public class Toolbox : Singleton<Toolbox> {
 
     private void Update() {
         ScrollSpeed += ScrollDelta;
+        if (MaxScrollSpeed > HardMaxScrollSpeed)
+            MaxScrollSpeed = HardMaxScrollSpeed;
         if (ScrollSpeed > MaxScrollSpeed)
             ScrollSpeed = MaxScrollSpeed;
     }
