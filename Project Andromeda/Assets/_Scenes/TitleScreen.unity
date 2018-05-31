@@ -145,7 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayButtonSP: {fileID: 1631699009}
   PlayButtonMP: {fileID: 1491688596}
-  QuitButton: {fileID: 1799213026}
 --- !u!81 &124782196
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5749,8 +5748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
-  m_SizeDelta: {x: 0, y: 78}
+  m_AnchoredPosition: {x: -10, y: -180}
+  m_SizeDelta: {x: -20, y: 78}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1513641290
 MonoBehaviour:
