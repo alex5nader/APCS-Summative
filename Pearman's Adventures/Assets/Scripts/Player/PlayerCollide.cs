@@ -6,6 +6,7 @@ using System.Collections;
 public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
+    public GameObject shield;
     private Scored score;
     private bool JetPack;
     private bool Shield;
@@ -23,6 +24,7 @@ public class PlayerCollide : MonoBehaviour {
         {
             if (Shield)
             {
+                shield.SetActive(false);
                 Destroy(other.gameObject);
                 Shield = false;
             }
@@ -64,7 +66,7 @@ public class PlayerCollide : MonoBehaviour {
         else if (other.gameObject.CompareTag("Shield") && !JetPack && !Shield)
         {
             Shield = true;
-            
+            shield.SetActive(true);
             Destroy(other.gameObject);
         }
     }
