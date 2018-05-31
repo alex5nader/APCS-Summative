@@ -69,6 +69,12 @@ public class PlayerCollide : MonoBehaviour {
             shield.SetActive(true);
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.CompareTag("Magnet") && !JetPack)
+        {
+            other.GetComponent<MoveTowardsPM>().target = transform;
+            StartCoroutine(magnet(15));
+            Destroy(other.gameObject);
+        }
     }
 
     private IEnumerator SpeedUp(float mult, float time)
@@ -86,5 +92,11 @@ public class PlayerCollide : MonoBehaviour {
         JetPack = true;
         yield return new WaitForSeconds(time);
         JetPack = false;
+    }
+    private IEnumerator magnet(float time)
+    {
+        MoveTowardsPM.isMagnet = true;
+        yield return new WaitForSeconds(time);
+        MoveTowardsPM.isMagnet = false;
     }
 }

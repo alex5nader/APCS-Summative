@@ -16,6 +16,7 @@ TagManager:
   - JetPack
   - Speed100
   - Shield
+  - Magnet
   layers:
   - Default
   - TransparentFX
