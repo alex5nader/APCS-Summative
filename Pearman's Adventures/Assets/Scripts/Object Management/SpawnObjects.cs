@@ -6,6 +6,7 @@ public class SpawnObjects : MonoBehaviour {
 
 	public SpawnableObjects SpawnableObjectList;
 	public PowerUpList PowerUpList;
+	// the object to place spawned objects under, so they don't clog up the hierarchy
 	[SerializeField]
 	private Transform ObjectParent;
 	public float XPosition;
@@ -14,6 +15,7 @@ public class SpawnObjects : MonoBehaviour {
 		var spawnableObject = SpawnableObjectList.Random();
 
 		foreach (var pair in spawnableObject.GetSpawnable()) {
+			// convert the selected object's position to an actual number
 			int y;
 			switch (pair.Value) {
 			case ObjectPosition.Top:
@@ -33,7 +35,7 @@ public class SpawnObjects : MonoBehaviour {
 				Instantiate(
 					PowerUpList.Random(),
 					new Vector2(XPosition, y),
-					Quaternion.identity,
+					Quaternion.identity, // no rotation
 					ObjectParent
 				);
 			} else {
