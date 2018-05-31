@@ -6,6 +6,7 @@ using System.Collections;
 public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
+    public GameObject shield;
     private Scored score;
     private bool JetPack;
     private bool Shield;
@@ -23,6 +24,7 @@ public class PlayerCollide : MonoBehaviour {
         {
             if (Shield)
             {
+                shield.SetActive(false);
                 Destroy(other.gameObject);
                 Shield = false;
             }
@@ -64,7 +66,13 @@ public class PlayerCollide : MonoBehaviour {
         else if (other.gameObject.CompareTag("Shield") && !JetPack && !Shield)
         {
             Shield = true;
-            
+            shield.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        else if(other.gameObject.CompareTag("Magnet") && !JetPack)
+        {
+            other.GetComponent<MoveTowardsPM>().target = transform;
+            StartCoroutine(magnet(15));
             Destroy(other.gameObject);
         }
     }
@@ -84,5 +92,11 @@ public class PlayerCollide : MonoBehaviour {
         JetPack = true;
         yield return new WaitForSeconds(time);
         JetPack = false;
+    }
+    private IEnumerator magnet(float time)
+    {
+        MoveTowardsPM.isMagnet = true;
+        yield return new WaitForSeconds(time);
+        MoveTowardsPM.isMagnet = false;
     }
 }
