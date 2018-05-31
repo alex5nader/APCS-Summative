@@ -10,7 +10,7 @@ public class AreDead : MonoBehaviour {
 		if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             Toolbox.Instance.Reset();
-            SceneManager.LoadScene(Toolbox.GameOverScene);
+            SceneManager.LoadScene((int) PlayState.GameOverScreen);
         }
 	}
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class SeedKill : MonoBehaviour {
 
 	public MonoBehaviour scoreTracker;
-
-	public bool isPear;
+	
+	public bool isPearSeed;
 
 	public float pointAdd;
 
@@ -21,7 +21,7 @@ public class SeedKill : MonoBehaviour {
 		if (other.gameObject.tag.Contains("Object")) {
 			if (other.gameObject.tag.Contains("Destroyable")) {
 				if (scoreTracker != null) {
-					if (isPear)
+					if (isPearSeed)
 						((ScoredPear) scoreTracker).addPoints(pointAdd);
 					else
 						((Scored) scoreTracker).addPoints(pointAdd);

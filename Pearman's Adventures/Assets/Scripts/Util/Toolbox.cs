@@ -1,20 +1,12 @@
 using UnityEngine;
 
 /// <summary>
-/// Toolbox is a way to provide global variables and constants.
+/// Toolbox is a way to provide global variables.
 /// Variables are accessible by Toolbox.Instance.&lt;var&gt;
-/// and constants are accessible by Toolbox.&lt;const&gt;
 /// </summary>
 public class Toolbox : Singleton<Toolbox> {
 
     protected Toolbox() { }
-
-    #region Constants
-    public const int TitleScreenScene = 1;
-    public const int SingleplayerScene = 2;
-    public const int MultiplayerScene = 3;
-    public const int GameOverScene = 4;
-    #endregion
 
     #region Globals
     public float ScrollSpeed { get; set; }
@@ -25,7 +17,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float PointsDelta { get; set; }
     public float DefaultPointsDelta { get; set; }
 
-    public int PlayMode { get; set; }
+    public PlayState PlayMode { get; set; }
     #endregion
 
     private void Awake() {
@@ -38,7 +30,7 @@ public class Toolbox : Singleton<Toolbox> {
 
         DefaultPointsDelta = 1f;
         PointsDelta = DefaultPointsDelta;
-        PlayMode = -1;
+        PlayMode = PlayState.None;
     }
 
     public void Reset() {
@@ -51,4 +43,12 @@ public class Toolbox : Singleton<Toolbox> {
         if (ScrollSpeed > MaxScrollSpeed)
             ScrollSpeed = MaxScrollSpeed;
     }
+}
+
+public enum PlayState {
+    None = -1,
+    TitleScreen,
+    Singleplayer,
+    Multiplayer,
+    GameOverScreen
 }
