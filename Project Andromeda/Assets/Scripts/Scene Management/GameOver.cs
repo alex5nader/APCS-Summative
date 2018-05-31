@@ -16,12 +16,12 @@ public class GameOver : MonoBehaviour {
 
     private void GoToTitle()
     {
-        Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+        Toolbox.Instance.Reset();
         SceneManager.LoadScene(0);
     }
 
     private void Replay() {
-        Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+        Toolbox.Instance.Reset();
         SceneManager.LoadScene(Toolbox.Instance.PlayMode);
     }
 }

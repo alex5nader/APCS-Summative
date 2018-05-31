@@ -15,7 +15,7 @@ public class AreDead : MonoBehaviour {
 	void Update () {
 		if(player == 0)
         {
-            Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
+            Toolbox.Instance.Reset();
             SceneManager.LoadScene(3);
         }
 	}

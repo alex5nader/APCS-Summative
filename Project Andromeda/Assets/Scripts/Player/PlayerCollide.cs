@@ -28,7 +28,6 @@ public class PlayerCollide : MonoBehaviour {
             }
             else
             {
-                Toolbox.Instance.ScrollSpeed = Toolbox.Instance.DefaultScrollSpeed;
                 AreDead.die();
                 Destroy(gameObject);
             }

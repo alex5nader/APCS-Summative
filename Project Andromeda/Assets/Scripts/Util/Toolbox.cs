@@ -9,6 +9,7 @@ public class Toolbox : Singleton<Toolbox> {
     public float DefaultScrollSpeed { get; private set; }
     public float ScrollDelta { get; set; }
     public float PointsDelta { get; set; }
+    public float DefaultPointsDelta { get; set; }
     public AnimationCurve Curve { get; set; }
 
     public int PlayMode { get; set; }
@@ -21,8 +22,14 @@ public class Toolbox : Singleton<Toolbox> {
         ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 5f);
         ScrollSpeed = DefaultScrollSpeed;
 
-        PointsDelta = 1f;
+        DefaultPointsDelta = 1f;
+        PointsDelta = DefaultPointsDelta;
         PlayMode = -1;
+    }
+
+    public void Reset() {
+        ScrollSpeed = DefaultScrollSpeed;
+        PointsDelta = DefaultPointsDelta;
     }
 
     private void Update() {
