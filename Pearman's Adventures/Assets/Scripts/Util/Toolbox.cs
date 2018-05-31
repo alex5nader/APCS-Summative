@@ -22,7 +22,7 @@ public class Toolbox : Singleton<Toolbox> {
     #endregion
 
     private void Awake() {
-        DefaultScrollSpeed = 30f;
+        DefaultScrollSpeed = 40f;
         MaxScrollSpeed = 80f;
         HardMaxScrollSpeed = MaxScrollSpeed * 4;
         // number of frames in 5 seconds = fps * 5 seconds
