@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PearShoot : MonoBehaviour
 {
+    // the base to copy when shoot is pressed
     public GameObject projectile;
+    // the parent object for seeds to be spawned under
     public Transform seeds;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))

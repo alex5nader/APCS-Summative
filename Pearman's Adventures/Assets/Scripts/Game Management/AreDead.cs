@@ -5,23 +5,12 @@ using UnityEngine;
 
 public class AreDead : MonoBehaviour {
 
-    private static int player;
-	
-    private void Start() {
-        player = GameObject.FindGameObjectsWithTag("Player").Length;
-    }
-
 	// Update is called once per frame
 	void Update () {
-		if(player == 0)
+		if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             Toolbox.Instance.Reset();
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(Toolbox.GameOverScene);
         }
 	}
-
-    public static void die()
-    {
-        player--;
-    }
 }

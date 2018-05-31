@@ -13,9 +13,11 @@ public class ScoredPear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // pear score should be equal to apple but apple is slightly ahead so this makes them look the same but also be equal if they both die to the same obstacle
+        // pear score should be equal to apple but apple is slightly ahead so this makes
+        // them look the same but also be equal if they both die to the same obstacle
         addPoints(Toolbox.Instance.PointsDelta);
         var text = Mathf.FloorToInt((int) (count + 20) / 10 * 10);
+        // only show scores above 0
         if (text < 0)
             text = 0;
         ScoreObject.SetText((text).ToString()); // make player feel better by "multiplying" the score by 10

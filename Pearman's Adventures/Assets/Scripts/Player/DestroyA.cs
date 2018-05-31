@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class DestroyA : MonoBehaviour
 {
-    public static int i = 0;
-    // Use this for initialization
+    public static int appleSeedCount = 0;
+	// runs when a new seed is created
     void Start()
     {
-        i++;
-        if (i > 2)
+        appleSeedCount++;
+        if (appleSeedCount > 2)
         {
-            i--;
+            appleSeedCount--;
             Destroy(gameObject);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // runs when the object goes offscreen
     void OnBecameInvisible()
     {
-        i--;
+        appleSeedCount--;
         Destroy(gameObject);
     }
 }

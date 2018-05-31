@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+/// <summary>
+/// SpawnableObject is a wrapper for three GameObjects representing an object in the top lane, middle lane, and bottom lane.
+/// <c>GetSpawnable()</c> returns a list containing the objects tied to their positions, ignoring nulls (null meaning an empty space)
+/// </summary>
 public class SpawnableObject : ScriptableObject {
 
     public Transform Top;

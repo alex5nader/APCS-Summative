@@ -3,25 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class destroy : MonoBehaviour {
-    public static int i = 0;
-	// Use this for initialization
+    public static int pearSeedCount = 0;
+	// runs when a new seed is created
 	void Start () {
-        i++;
-        if (i > 2)
+        pearSeedCount++;
+        if (pearSeedCount > 2)
         {
-            i--;
+            pearSeedCount--;
             Destroy(gameObject);
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+    // runs when the object goes offscreen
     void OnBecameInvisible()
     {
-        i--;
+        pearSeedCount--;
         Destroy(gameObject);
     }
 }

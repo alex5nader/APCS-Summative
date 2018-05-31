@@ -4,16 +4,10 @@ public class ObjectMove : MonoBehaviour {
 
     private SpawnObjects objectSpawner;
 
-    bool isfivex;
-    bool istenx;
-
     private void Start() {
         objectSpawner = Camera.main.GetComponent<SpawnObjects>();
         if (objectSpawner == null)
             Debug.LogError("Main camera has no SpawnObjects script attached.");
-
-        isfivex = false;
-        istenx = false;
     }
 
     private void Update() {
@@ -22,12 +16,9 @@ public class ObjectMove : MonoBehaviour {
 
         transform.Translate(-Toolbox.Instance.ScrollSpeed * Time.deltaTime, 0, 0);
 
+        // objects spawn offscreen by some amount XPosition
+        // if this object gets to be offscreen on the other side by that same amount (x pos <= -XPosition), destroy it
         if (transform.position.x <= -objectSpawner.XPosition)
             Destroy(gameObject);
-    }
-
-    public void fivex()
-    {
-        isfivex = true;
-    }   
+    } 
 }
