@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveTowardsPM : MonoBehaviour {
-    public Transform target;
     static public bool isMagnet;
 	// Use this for initialization
 	void Start () {
-        isMagnet = false;
         
 	}
 
@@ -17,10 +15,10 @@ public class MoveTowardsPM : MonoBehaviour {
         Debug.Log(isMagnet);
         if(isMagnet)
         {
-            float step = (Toolbox.Instance.ScrollSpeed * Time.deltaTime) * 2;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            float step = (Toolbox.Instance.ScrollSpeed * Time.deltaTime) * 1.5f;
+            transform.position = Vector2.MoveTowards(transform.position, GameObject.FindWithTag("Player").transform.position, step);
 
-            if (Vector2.Distance(transform.position, target.position) < 0.1f)
+            if (Vector2.Distance(transform.position, GameObject.FindWithTag("Player").transform.position) < 0.1f)
             {
                 transform.position = Vector2.zero;
             }
