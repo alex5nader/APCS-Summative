@@ -27,7 +27,7 @@ public class Toolbox : Singleton<Toolbox> {
         HardMaxScrollSpeed = MaxScrollSpeed * 4;
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
-        ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 5f);
+        ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
         ScrollSpeed = DefaultScrollSpeed;
 
         DefaultPointsDelta = 1f;

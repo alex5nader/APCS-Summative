@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Name: Power Up List
   m_EditorClassIdentifier: 
   _powerUps:
-  - {fileID: 1421827755991270, guid: 3a1534c59bb8197449399d2b5789714a, type: 2}
+  - {fileID: 1573758186392842, guid: 5a7537be3350f894babd848c71f6b91a, type: 2}
+  - {fileID: 1428602388839668, guid: d6f8bc5a229b9c94cadc2e65379aae63, type: 2}
+  - {fileID: 1786034593381820, guid: c1e2fa7a0bffd6142b00191dab355e54, type: 2}
+  - {fileID: 1086938173667848, guid: b727cf15c77dc9f40902f72cb2f36f5d, type: 2}
   - {fileID: 1848281310436814, guid: 0d602b32131110744ad298a20b34b1db, type: 2}
+  - {fileID: 1101754584327778, guid: 951fbad602e0a2048b4a413cfd364ad5, type: 2}
