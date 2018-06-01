@@ -1,0 +1,1 @@
+Just extract the .zip file to anywhere you like and open index.html to play the game.
