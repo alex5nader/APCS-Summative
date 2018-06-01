@@ -14,8 +14,16 @@ public class Toolbox : Singleton<Toolbox> {
     #region Globals
     public float ScrollSpeed { get; set; }
 
+    public float GetActualMaxScrollSpeed() {
+        return actualMaxScrollSpeed;
+    }
+
+    public float GetActualPointsDelta() {
+        return actualPointsDelta;
+    }
+
     public float MaxScrollSpeed {
-        get { return Mathf.Clamp(actualMaxScrollSpeed, DefaultMaxScrollSpeed * .75f, actualMaxScrollSpeed); }
+        get { return Mathf.Clamp(actualMaxScrollSpeed, DefaultMaxScrollSpeed * .75f, HardMaxScrollSpeed); }
         set { actualMaxScrollSpeed = value; }
     }
     public float DefaultScrollSpeed { get; private set; }
@@ -36,10 +44,10 @@ public class Toolbox : Singleton<Toolbox> {
         DefaultScrollSpeed = 40f;
         DefaultMaxScrollSpeed = 80f;
         MaxScrollSpeed = DefaultMaxScrollSpeed;
-        HardMaxScrollSpeed = MaxScrollSpeed * 5; // jetpack makes you 5x as fast so the absolute max should be jetpack speed
+        HardMaxScrollSpeed = DefaultMaxScrollSpeed * 5; // jetpack makes you 5x as fast so the absolute max should be jetpack speed
         // number of frames in 5 seconds = fps * 5 seconds
-        // delta per frame = change in speed / (number of frames in 5 seconds)
-        ScrollSpeedDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
+        // delta per frame = desired change in speed / (number of frames in 5 seconds)
+        ScrollSpeedDelta = (DefaultMaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
         ScrollSpeed = DefaultScrollSpeed;
 
         DefaultPointsDelta = 1f;
@@ -54,10 +62,6 @@ public class Toolbox : Singleton<Toolbox> {
 
     private void Update() {
         ScrollSpeed += ScrollSpeedDelta;
-        if (MaxScrollSpeed > HardMaxScrollSpeed) // keep withing hard cap
-            MaxScrollSpeed = HardMaxScrollSpeed;
-        if (MaxScrollSpeed < DefaultMaxScrollSpeed * .75f) // don't go too slow
-            MaxScrollSpeed = DefaultMaxScrollSpeed * .75f;
         if (ScrollSpeed > MaxScrollSpeed) // cap speed outside of speed ups/downs
             ScrollSpeed = MaxScrollSpeed;
     }

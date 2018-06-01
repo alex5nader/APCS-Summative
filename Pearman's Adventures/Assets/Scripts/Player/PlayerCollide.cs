@@ -85,13 +85,13 @@ public class PlayerCollide : MonoBehaviour {
 
     private IEnumerator SpeedUp(float mult, float time)
     {
-        Toolbox.Instance.MaxScrollSpeed *= mult;
+        Toolbox.Instance.MaxScrollSpeed = Toolbox.Instance.GetActualMaxScrollSpeed() * mult;
         Toolbox.Instance.ScrollSpeed *= mult;
-        Toolbox.Instance.PointsDelta *= mult;
+        Toolbox.Instance.PointsDelta = Toolbox.Instance.GetActualPointsDelta() * mult;
         yield return new WaitForSeconds(time);
-        Toolbox.Instance.MaxScrollSpeed /= mult;
+        Toolbox.Instance.MaxScrollSpeed = Toolbox.Instance.GetActualMaxScrollSpeed() / mult;
         Toolbox.Instance.ScrollSpeed /= mult;
-        Toolbox.Instance.PointsDelta /= mult;
+        Toolbox.Instance.PointsDelta = Toolbox.Instance.GetActualPointsDelta() * mult;
     }
     private IEnumerator Invunerability(float time)
     {
