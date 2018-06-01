@@ -9,6 +9,7 @@ public class Toolbox : Singleton<Toolbox> {
     protected Toolbox() { }
 
     private float actualMaxScrollSpeed;
+    private float actualPointsDelta;
 
     #region Globals
     public float ScrollSpeed { get; set; }
@@ -21,8 +22,11 @@ public class Toolbox : Singleton<Toolbox> {
     public float DefaultMaxScrollSpeed { get; private set; }
     public float HardMaxScrollSpeed { get; set; }
     public float ScrollSpeedDelta { get; set; }
-    
-    public float PointsDelta { get; set; }
+
+    public float PointsDelta {
+        get { return Mathf.Clamp(actualPointsDelta, DefaultPointsDelta * .75f, actualPointsDelta); }
+        set { actualPointsDelta = value; }
+    }
     public float DefaultPointsDelta { get; set; }
 
     public PlayState PlayMode { get; set; }
