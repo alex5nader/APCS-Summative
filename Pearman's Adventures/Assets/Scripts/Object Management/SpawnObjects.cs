@@ -32,7 +32,7 @@ public class SpawnObjects : MonoBehaviour {
 			}
 
 			var rand = Random.Range(0, 30);
-			if (rand < 30) { // 1 out of 30 objects will become a power up
+			if (rand < 1) { // 1 out of 30 objects will become a power up
 				var toSpawn = PowerUpList.Random();
 				if (toSpawn.CompareTag("JetPack")) {
 					if (Random.Range(0, 2) == 0) { // 50-50 chance for jetpack to not spawn because it is very strong
