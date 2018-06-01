@@ -51,7 +51,7 @@ public class SpawnObjects : MonoBehaviour {
 						);
 					}
 				} else if (toSpawn.CompareTag("Magnet")) {
-				    if (Toolbox.Instance.PlayMode == PlayState.Multiplayer) {
+				    if (Toolbox.Instance.PlayMode != PlayState.Multiplayer) {
 				        Instantiate(
 				            pair.Key,
 				            new Vector2(XPosition, y),
