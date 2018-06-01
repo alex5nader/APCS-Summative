@@ -8,12 +8,19 @@ public class Toolbox : Singleton<Toolbox> {
 
     protected Toolbox() { }
 
+    private float actualMaxScrollSpeed;
+
     #region Globals
     public float ScrollSpeed { get; set; }
-    public float MaxScrollSpeed { get; set; }
+
+    public float MaxScrollSpeed {
+        get { return Mathf.Clamp(actualMaxScrollSpeed, DefaultMaxScrollSpeed * .75f, actualMaxScrollSpeed); }
+        set { actualMaxScrollSpeed = value; }
+    }
     public float DefaultScrollSpeed { get; private set; }
+    public float DefaultMaxScrollSpeed { get; private set; }
     public float HardMaxScrollSpeed { get; set; }
-    public float ScrollDelta { get; set; }
+    public float ScrollSpeedDelta { get; set; }
     
     public float PointsDelta { get; set; }
     public float DefaultPointsDelta { get; set; }
@@ -23,11 +30,12 @@ public class Toolbox : Singleton<Toolbox> {
 
     private void Awake() {
         DefaultScrollSpeed = 40f;
-        MaxScrollSpeed = 80f;
-        HardMaxScrollSpeed = MaxScrollSpeed * 5; // jetpack makes you 10 as fast so the absolute max should be jetpack speed
+        DefaultMaxScrollSpeed = 80f;
+        MaxScrollSpeed = DefaultMaxScrollSpeed;
+        HardMaxScrollSpeed = MaxScrollSpeed * 5; // jetpack makes you 5x as fast so the absolute max should be jetpack speed
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
-        ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
+        ScrollSpeedDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
         ScrollSpeed = DefaultScrollSpeed;
 
         DefaultPointsDelta = 1f;
@@ -41,10 +49,12 @@ public class Toolbox : Singleton<Toolbox> {
     }
 
     private void Update() {
-        ScrollSpeed += ScrollDelta;
-        if (MaxScrollSpeed > HardMaxScrollSpeed)
+        ScrollSpeed += ScrollSpeedDelta;
+        if (MaxScrollSpeed > HardMaxScrollSpeed) // keep withing hard cap
             MaxScrollSpeed = HardMaxScrollSpeed;
-        if (ScrollSpeed > MaxScrollSpeed)
+        if (MaxScrollSpeed < DefaultMaxScrollSpeed * .75f) // don't go too slow
+            MaxScrollSpeed = DefaultMaxScrollSpeed * .75f;
+        if (ScrollSpeed > MaxScrollSpeed) // cap speed outside of speed ups/downs
             ScrollSpeed = MaxScrollSpeed;
     }
 }
