@@ -6,6 +6,7 @@ public class SpawnObjects : MonoBehaviour {
 
 	public SpawnableObjects SpawnableObjectList;
 	public PowerUpList PowerUpList;
+	public GameObject CoinPrefab;
 	// the object to place spawned objects under, so they don't clog up the hierarchy
 	[SerializeField]
 	private Transform ObjectParent;
@@ -30,19 +31,46 @@ public class SpawnObjects : MonoBehaviour {
 				break;
 			}
 
-			// 1 in 180 chance to spawn a power up in place of an obstacle
-			if (Random.Range(0, 180)  < 90) {
+			var rand = Random.Range(0, 30);
+			if (rand < 30) { // 1 out of 30 objects will become a power up
+				var toSpawn = PowerUpList.Random();
+				if (toSpawn.CompareTag("JetPack")) {
+					if (Random.Range(0, 2) == 0) { // 50-50 chance for jetpack to not spawn because it is very strong
+						Debug.Log("sorry jetpack no spawn");
+						Instantiate(
+							pair.Key,
+							new Vector2(XPosition, y),
+							Quaternion.identity, 
+							ObjectParent
+						);
+					} else {
+						Instantiate(
+							toSpawn,
+							new Vector2(XPosition, y),
+							Quaternion.identity, // no rotation
+							ObjectParent
+						);
+					}
+				} else {
+					Instantiate(
+						toSpawn,
+						new Vector2(XPosition, y),
+						Quaternion.identity, // no rotation
+						ObjectParent
+					);
+				}
+			} else if (rand < 5) { // 5 out of 30 objects will become a coin
 				Instantiate(
-					PowerUpList.Random(),
+					CoinPrefab,
 					new Vector2(XPosition, y),
-					Quaternion.identity, // no rotation
+					Quaternion.identity,
 					ObjectParent
 				);
 			} else {
 				Instantiate(
 					pair.Key,
 					new Vector2(XPosition, y),
-					Quaternion.identity,
+					Quaternion.identity, 
 					ObjectParent
 				);
 			}

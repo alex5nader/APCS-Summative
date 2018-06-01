@@ -10,8 +10,8 @@ TagManager:
   - ScoreUI
   - Destroyable Object
   - Coin
-  - Speed2
-  - Speed3
+  - SpeedYellow
+  - SpeedRed
   - SlowDown
   - JetPack
   - Speed100

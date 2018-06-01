@@ -7,6 +7,7 @@ public class PlayerCollide : MonoBehaviour {
 
     public bool isPear;
     public GameObject shieldObject;
+    public GameObject goldShieldObject;
     private ScoredPear scoreTrackerPear;
     private Scored scoreTrackerApple;
     private bool hasJetPack;
@@ -47,14 +48,14 @@ public class PlayerCollide : MonoBehaviour {
                 scoreTrackerPear.addPoints(1000);
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed2"))
+        else if (other.gameObject.CompareTag("SpeedYellow"))
         {
-            StartCoroutine(SpeedUp(2, 15));
+            StartCoroutine(SpeedUp(1.5f, 15));
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Speed3"))
+        else if (other.gameObject.CompareTag("SpeedRed"))
         {
-            StartCoroutine(SpeedUp(3,15));
+            StartCoroutine(SpeedUp(2f,15));
             Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("SlowDown"))
@@ -64,7 +65,7 @@ public class PlayerCollide : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("JetPack"))
         {
-            StartCoroutine(SpeedUp(10f, 5));
+            StartCoroutine(SpeedUp(5, 5));
             StartCoroutine(Invunerability(6));
             Destroy(other.gameObject);
         }
@@ -95,7 +96,12 @@ public class PlayerCollide : MonoBehaviour {
     private IEnumerator Invunerability(float time)
     {
         hasJetPack = true;
+        goldShieldObject.SetActive(true);
+        var shieldWasActive = shieldObject.activeSelf;
+        shieldObject.SetActive(false);
         yield return new WaitForSeconds(time);
+        goldShieldObject.SetActive(false);
+        shieldObject.SetActive(shieldWasActive);
         hasJetPack = false;
     }
     private IEnumerator Magnet(float time)

@@ -297,16 +297,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114121332040661792, guid: bd01be8164f71ea419d5480ea9ed7964,
-        type: 2}
-      propertyPath: seeds
-      value: 
-      objectReference: {fileID: 464869490}
     - target: {fileID: 114788001499310120, guid: bd01be8164f71ea419d5480ea9ed7964,
         type: 2}
       propertyPath: ScoreObject
       value: 
       objectReference: {fileID: 1928462393}
+    - target: {fileID: 114121332040661792, guid: bd01be8164f71ea419d5480ea9ed7964,
+        type: 2}
+      propertyPath: seeds
+      value: 
+      objectReference: {fileID: 464869490}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd01be8164f71ea419d5480ea9ed7964, type: 2}
   m_IsPrefabParent: 0
@@ -784,6 +784,7 @@ MonoBehaviour:
   SpawnableObjectList: {fileID: 11400000, guid: 94703223e7897eb498d6d4da74b2c45b,
     type: 2}
   PowerUpList: {fileID: 11400000, guid: b326ebcdb08193249bcb9d9faff49673, type: 2}
+  CoinPrefab: {fileID: 1421827755991270, guid: 3a1534c59bb8197449399d2b5789714a, type: 2}
   ObjectParent: {fileID: 1111430288}
   XPosition: 36
 --- !u!81 &2111410937

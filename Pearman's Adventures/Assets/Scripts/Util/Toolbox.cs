@@ -24,7 +24,7 @@ public class Toolbox : Singleton<Toolbox> {
     private void Awake() {
         DefaultScrollSpeed = 40f;
         MaxScrollSpeed = 80f;
-        HardMaxScrollSpeed = MaxScrollSpeed * 4;
+        HardMaxScrollSpeed = MaxScrollSpeed * 5; // jetpack makes you 10 as fast so the absolute max should be jetpack speed
         // number of frames in 5 seconds = fps * 5 seconds
         // delta per frame = change in speed / (number of frames in 5 seconds)
         ScrollDelta = (MaxScrollSpeed - DefaultScrollSpeed) / (60f * 60f * 1.5f);
