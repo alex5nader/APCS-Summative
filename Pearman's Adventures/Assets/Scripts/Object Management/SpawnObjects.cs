@@ -36,7 +36,6 @@ public class SpawnObjects : MonoBehaviour {
 				var toSpawn = PowerUpList.Random();
 				if (toSpawn.CompareTag("JetPack")) {
 					if (Random.Range(0, 2) == 0) { // 50-50 chance for jetpack to not spawn because it is very strong
-						Debug.Log("sorry jetpack no spawn");
 						Instantiate(
 							pair.Key,
 							new Vector2(XPosition, y),
@@ -51,6 +50,15 @@ public class SpawnObjects : MonoBehaviour {
 							ObjectParent
 						);
 					}
+				} else if (toSpawn.CompareTag("Magnet")) {
+				    if (Toolbox.Instance.PlayMode == PlayState.Multiplayer) {
+				        Instantiate(
+				            pair.Key,
+				            new Vector2(XPosition, y),
+				            Quaternion.identity,
+				            ObjectParent
+				        );
+				    }
 				} else {
 					Instantiate(
 						toSpawn,
