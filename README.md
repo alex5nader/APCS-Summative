@@ -8,7 +8,7 @@
 **Pearman's Adventures** can be played online at <a href="https://pearmanadventure.000webhostapp.com" target="_blank">000webhost</a>.
 
 ### Installation
-1. Download the latest release
+1. Download the [latest release](https://github.com/habicha/APCS-Summative/releases)
 2. Unzip it to wherever you like
 
 ### Running
