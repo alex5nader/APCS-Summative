@@ -12,7 +12,4 @@
 2. Unzip it to wherever you like
 
 ### Running
-Open `PlayGame.html` run the game.
-
-### Issues
-The game may require [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) to run.
+Open `PlayGame.html` in [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) run the game.
