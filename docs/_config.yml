@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 
-{% if page.unity_dir %}
+{% if page.unity__dir %}
   {% include page__unity.html %}
 {% endif %}
 
