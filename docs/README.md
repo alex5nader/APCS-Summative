@@ -13,3 +13,8 @@
 
 ### Running
 Open `PlayGame.html` in [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) run the game.
+
+## Note to previous devs from ThatOneHumann
+I am currently remaking this. I doubt this will be read by any previous developer but if anyone here sees this, please, i kinda forgot how to use unity well lmao
+add me on discord at "thatonehuman125k" if you wish to help
+NOTE: if you (the reader) is reading this anytime past 1/1/2024 (and this hasnt changed) I probably won't add ya
